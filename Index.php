@@ -12,7 +12,9 @@
 
     echo "<center><h1> <a href='vconect.php'>Testar conexão</a></h1></center>";
 
-    echo "<center><h1> <a href='exibe.php'>Exibir Dados</a></h1></center>";
+    echo "<center><h1> <a href='EXdados.php'>Exibir Dados</a></h1></center>";
+
+    echo "<center><h1> <a href='EXdadoscar.php'>Exibir Dados dos carros</a></h1></center>";
 
     echo "<center><h1> <a href='cadastrar.php'>Cadastrar</a></h1></center>";
     
