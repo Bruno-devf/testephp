@@ -9,5 +9,5 @@
     echo "<br>";
     echo "Conexao ok";
 
-    mysql_close($conexao);
+    mysqli_close($conexao);
 ?>
