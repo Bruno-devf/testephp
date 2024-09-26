@@ -7,15 +7,15 @@ CREATE TABLE  tb_carros (
   fabricante varchar(50) 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-insert into tb_carros (id,modelo,fabricante) values (1,Corolla,Toyota);
-insert into tb_carros (id,modelo,fabricante) values (2,Hilux,Toyota);
-insert into tb_carros (id,modelo,fabricante) values (3,Gol,Volkswagen);
-insert into tb_carros (id,modelo,fabricante) values (4,Tiguan,Volkswagen);
-insert into tb_carros (id,modelo,fabricante) values (5,Fiesta,Ford);
-insert into tb_carros (id,modelo,fabricante) values (6,Ranger,Ford);
-insert into tb_carros (id,modelo,fabricante) values (7,Civic,Honda);
-insert into tb_carros (id,modelo,fabricante) values (8,HR-V,Honda);
-insert into tb_carros (id,modelo,fabricante) values (9,Onix,Chevrolet);
-insert into tb_carros (id,modelo,fabricante) values (10,Tracker,Chevrolet);
+insert into tb_carros (id,modelo,fabricante) values (1,'Corolla','Toyota');
+insert into tb_carros (id,modelo,fabricante) values (2,'Hilux','Toyota');
+insert into tb_carros (id,modelo,fabricante) values (3,'Gol','Volkswagen');
+insert into tb_carros (id,modelo,fabricante) values (4,'Tiguan','Volkswagen');
+insert into tb_carros (id,modelo,fabricante) values (5,'Fiesta','Ford');
+insert into tb_carros (id,modelo,fabricante) values (6,'Ranger','Ford');
+insert into tb_carros (id,modelo,fabricante) values (7,'Civic','Honda');
+insert into tb_carros (id,modelo,fabricante) values (8,'HR-V','Honda');
+insert into tb_carros (id,modelo,fabricante) values (9,'Onix','Chevrolet');
+insert into tb_carros (id,modelo,fabricante) values (10,'Tracker','Chevrolet');
 
-select  from tb_carros;
+select * from tb_carros;
