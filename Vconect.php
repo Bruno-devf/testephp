@@ -3,7 +3,7 @@
     $host  = "localhost:3306";
     $user  = "root";
     $pass  = "";
-    $base  = "pw2";
+    $base  = "carros";
     $conexao  = mysqli_connect($host, $user, $pass, $base);
 
     echo "<br>";

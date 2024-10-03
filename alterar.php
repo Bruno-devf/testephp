@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Carros</title>
+    <title>Atualização de Carros</title>
 </head>
 <body>
-    <h1>Cadastro de Carros</h1>
+    <h1>Atualização de Carros</h1>
+    
     <form action="" method="POST">
         <fieldset>
-            <legend>Insira os dados do carro</legend>
+            <legend>Atualize os dados do carro</legend>
             <table>
                 <tr>
                     <td>ID:</td>
@@ -24,35 +25,38 @@
                     <td><input type="text" name="fabricante" required /></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input type="submit" value="Cadastrar" /></td>
+                    <td colspan="2">
+                        <input type="submit" name="update" value="Atualizar" />
+                    </td>
                 </tr>
             </table>
         </fieldset>
     </form>
-<?php
 
+    <?php
     $host = "localhost"; 
     $user = "root";
     $pass = "";
     $base = "carros";
     $conexao = mysqli_connect($host, $user, $pass, $base);
 
-    if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        $id = mysqli_real_escape_string($conexao, $_POST["id"]);
-        $modelo = mysqli_real_escape_string($conexao, $_POST["modelo"]);
-        $fabricante = mysqli_real_escape_string($conexao, $_POST["fabricante"]);
 
-       
-        $input = mysqli_query($conexao, "INSERT INTO tb_carros (id, modelo, fabricante) VALUES ('$id', '$modelo', '$fabricante')");
+    if ($_SERVER["REQUEST_METHOD"] === "POST" && $_POST['update'] === "Atualizar") {
+     
+        $id = $_POST["id"];
+        $modelo = $_POST["modelo"];
+        $fabricante = $_POST["fabricante"];
 
-        if ($input) {
-            echo "<p>Cadastro realizado com sucesso!</p>";
+   
+        $update = mysqli_query($conexao, "UPDATE tb_carros SET modelo='$modelo', fabricante='$fabricante' WHERE id='$id'");
+
+        if ($update) {
+            echo "<p>Atualização realizada com sucesso!</p>";
         } else {
             echo "<p>Error: " . mysqli_error($conexao) . "</p>";
         }
     }
 
- 
     $resultadoQueryMySQL = mysqli_query($conexao, "SELECT * FROM tb_carros");
     echo "<center><table border='3'>
             <tr>
@@ -60,12 +64,12 @@
                 <td>Modelo</td>
                 <td>Fabricante</td>
             </tr>";
-    
+
     while ($escrever = mysqli_fetch_array($resultadoQueryMySQL)) {
         echo "<tr>
-                <td>" . htmlspecialchars($escrever["id"]) . "</td>
-                <td>" . htmlspecialchars($escrever["modelo"]) . "</td>
-                <td>" . htmlspecialchars($escrever["fabricante"]) . "</td>
+                <td>" . $escrever["id"] . "</td>
+                <td>" . $escrever["modelo"] . "</td>
+                <td>" . $escrever["fabricante"] . "</td>
               </tr>";
     }
 

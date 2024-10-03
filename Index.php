@@ -21,6 +21,8 @@
     echo "<center><h1> <a href='alterar.php'>Alterar</a></h1></center>";
     
     echo "<center><h1> <a href='excluir.php'>Excluir</a></h1></center>";
+
+    echo "<center><h1> <a href='consultar.php'>Consultar</a></h1></center>";
     ?>
 
 
