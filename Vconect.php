@@ -10,4 +10,5 @@
     echo "Conexao ok";
 
     mysqli_close($conexao);
+    echo "<a href='Index.php'>HOME</a>";
 ?>

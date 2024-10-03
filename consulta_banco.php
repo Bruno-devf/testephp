@@ -24,4 +24,5 @@
         echo "</br></br>";  
       }
     mysqli_close($conexao);
+    echo "<a href='Index.php'>HOME</a>";
 ?>

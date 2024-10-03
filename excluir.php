@@ -65,5 +65,6 @@
 
     mysqli_close($conexao);
     ?>
+      <a href='Index.php'>HOME</a>
 </body>
 </html>
