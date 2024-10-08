@@ -38,9 +38,9 @@
     $conexao = mysqli_connect($host, $user, $pass, $base);
 
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        $id = mysqli_real_escape_string($conexao, $_POST["id"]);
-        $modelo = mysqli_real_escape_string($conexao, $_POST["modelo"]);
-        $fabricante = mysqli_real_escape_string($conexao, $_POST["fabricante"]);
+        $id = $_POST["id"];
+        $modelo = $_POST["modelo"];
+        $fabricante = $_POST["fabricante"];
 
        
         $input = mysqli_query($conexao, "INSERT INTO tb_carros (id, modelo, fabricante) VALUES ('$id', '$modelo', '$fabricante')");
@@ -63,9 +63,9 @@
     
     while ($escrever = mysqli_fetch_array($resultadoQueryMySQL)) {
         echo "<tr>
-                <td>" . htmlspecialchars($escrever["id"]) . "</td>
-                <td>" . htmlspecialchars($escrever["modelo"]) . "</td>
-                <td>" . htmlspecialchars($escrever["fabricante"]) . "</td>
+                <td>" . ($escrever["id"]) . "</td>
+                <td>" . ($escrever["modelo"]) . "</td>
+                <td>" . ($escrever["fabricante"]) . "</td>
               </tr>";
     }
 
